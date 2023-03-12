@@ -6,6 +6,7 @@ services:
     dockerContext: ./docker
     repo: https://github.com/automatisch/automatisch
     autoDeploy: false
+    instanceType: free
     envVars:
       - key: HOST
         fromService:
