@@ -1,4 +1,4 @@
-instanceType: free
+
 services:
   - type: web
     name: automatisch-main
@@ -7,7 +7,7 @@ services:
     dockerContext: ./docker
     repo: https://github.com/automatisch/automatisch
     autoDeploy: false
-
+    plan: free
     envVars:
       - key: HOST
         fromService:
@@ -48,6 +48,7 @@ services:
   - type: worker
     name: automatisch-worker
     env: docker
+    plan: free
     dockerfilePath: ./docker/Dockerfile
     dockerContext: ./docker
     repo: https://github.com/automatisch/automatisch
@@ -93,6 +94,7 @@ services:
       - fromGroup: common-env-vars
   - type: redis
     name: automatisch-redis
+    plan: free
     ipAllowList: [] # allow only internal connections
     maxmemoryPolicy: noeviction
 databases:
